@@ -1,15 +1,18 @@
 """Idea taken from https://www.notion.so/Analogies-Generator-9b046963f52f446b9bef84aa4e416a4c"""
 
+##File has passed checks 
+
 import os
 import sys
-sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+API_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..')
+sys.path.append(API_PATH)
 
 from api import GPT, Example, UIConfig
 from api import demo_web_app
 
 
 # Construct GPT object and show some examples
-gpt = GPT(engine="davinci",
+gpt = GPT(engine="curie-instruct-beta",
           temperature=0.5,
           max_tokens=100)
 
