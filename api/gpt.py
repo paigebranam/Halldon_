@@ -45,6 +45,7 @@ class GPT:
     def __init__(self,
                  engine='davinci',
                  temperature=0.5,
+                 top_p = .51,
                  max_tokens=100,
                  input_prefix="input: ",
                  input_suffix="\n",
@@ -54,6 +55,7 @@ class GPT:
         self.examples = {}
         self.engine = engine
         self.temperature = temperature
+        self.top_p = top_p
         self.max_tokens = max_tokens
         self.input_prefix = input_prefix
         self.input_suffix = input_suffix
@@ -115,7 +117,7 @@ class GPT:
                                             prompt=self.craft_query(prompt),
                                             max_tokens=self.get_max_tokens(),
                                             temperature=self.get_temperature(),
-                                            top_p=1,
+                                            top_p=.5,
                                             n=1,
                                             stream=False,
                                             stop=self.stop)

@@ -1,46 +1,47 @@
+##Still not working properly
+#adding in top_p 
+
 import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__))), '..', '..')
+API_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..')
+sys.path.append(API_PATH)
 
 from api import GPT, Example, UIConfig
 from api import demo_web_app
 
 
 # Construct GPT object and show some examples
-gpt = GPT(engine="davinci",
-          temperature=0.5,
-          max_tokens=80)
+gpt = GPT(engine="curie-instruct-beta",
+          temperature=0.9,
+          top_p = .36,
+          max_tokens=40)
 
 #Create a growth ideas generator
 
-gpt.add_example(Example("""CopyAi, an AI powered copywriter for small businesses and entrepreneurs""",
-"""“create a use case with a clear value proposition to show how CopyAi will help in creating content 
-for small businesses and entrepreneurs who are having trouble coming up with engaging content."""))
 
-gpt.add_example(Example("""CopyAi, an AI powered copywriter for small businesses and entrepreneurs""",
-"""“build an application programming interface or API for the CopyAi platform - allowing developers 
-to embed the AI as part of their programs. Assuming that there are 5,000 small businesses in the US alone, 
-and each business will use the CopyAi API for a few hundred dollars a month, this means that there is an annual 
-recurring revenue potential of $500,000 gross revenue per year. If the fixed costs are lowered, then there is 
-potential to make more than double digit profit margins."""))
+gpt.add_example(Example("""leather camera strap""",
+"""“New idea: promote prints with a group of people you're partnered with as a collaborative promotion"""))
 
-gpt.add_example(Example("""CopyAi, an AI powered copywriter for small businesses and entrepreneurs""",
-"""“design an annual challenge for the top CopyAi users, to overcome a specific challenge like writing 
-compelling introverts and effective sales copy. The goal is really to find out what the users do best 
-and then apply it to their businesses or life goals. This will help deepen the relationship between CopyAi 
-and it’s community, as they engage across challenges and gleaning each other’s advice as they help each 
-other over come them."""))
+gpt.add_example(Example("""plant pot""",
+"""“New idea: offer to include a free cutting of a plant when customers purchases the pot"""))
 
-gpt.add_example(Example("""CopyAi, an AI powered copywriter for small businesses and entrepreneurs""",
-"""“onboard customers by giving away advertising credit to try out the product. They can then pay to keep 
-using CopyAi or upgrade their plan when they start using the product and discover the value in your core offering."""))
+gpt.add_example(Example("""leather sunglasses case""",
+"""“New idea: offer small container of leather cleaner with purchase."""))
 
-gpt.add_example(Example("""CopyAi, an AI powered copywriter for small businesses and entrepreneurs""",
-"""“integrate it with Shopify's product search . CopyAi can leverage the main benefit of Shopify's product 
-search attribute. Even if merchants don't use CopyAi, they will be able to get accurate descriptions for 
-their products. This will increase their conversion rate and boost their sales."""))
+gpt.add_example(Example("""candles made from soy wax and essential oils""",
+"""“New idea: include a small sized candle of a new scent when customer purchases a regular sized candle."""))
 
+gpt.add_example(Example("""dog walking services""",
+"""“New idea: market to certain age-group of people who may need this service."""))
 
+gpt.add_example(Example("""custom website design""",
+"""“New idea: start a referall program for customers who refer their friends."""))
+
+gpt.add_example(Example("""running shoes""",
+"""“New idea: Customer gets a free pair of socks with running shoes purchase."""))
+
+gpt.add_example(Example("""1978 35mm film camera""",
+"""“New idea: include a roll of film with the camera."""))
 
 # Define UI configuration
 config = UIConfig(description="Generate new ideas for the growth of your product",
