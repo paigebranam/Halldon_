@@ -17,10 +17,6 @@ gpt.add_example(Example('Data Scientist, Experience mining data, optimizing clas
 
 
 
-
-
-
-
 # Define UI configuration
 config = UIConfig(description="Create a cover letter.",
                   button_text="Create",
