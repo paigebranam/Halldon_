@@ -1,14 +1,18 @@
+##working as expected. 
+
 import os
 import sys
+API_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..')
+sys.path.append(API_PATH)
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 from api import GPT, Example, UIConfig
 from api import demo_web_app
 
 # Construct GPT object and show some examples
-gpt = GPT(engine="davinci",
+gpt = GPT(engine="curie-instruct-beta",
           temperature=0.5,
+          top_p=1,
           max_tokens=100)
         
 
@@ -30,7 +34,7 @@ cooking tutorials and interviews with the creator. Along with hashtags, a vegan 
 card game to share on social media."""))
 
 gpt.add_example(Example("""Running shoe, Neutral support running shoe with plenty of cushion for a smooth run.""",
-"""For the rebranding of the running show: 'You are going to love it. No matter how fast or slow you go.'"""))
+"""For the rebranding of the running show: 'You are going to love it. No matter how fast or slow you go."""))
 
 
 # Define UI configuration
