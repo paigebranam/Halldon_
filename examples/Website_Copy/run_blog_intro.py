@@ -1,16 +1,21 @@
+##updated api path, engine, top p, updated top p, temp, and tokens. 
+##Runs as expected 
+
 import os
 import sys
-
-sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+API_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..')
+sys.path.append(API_PATH)
 
 from api import GPT, Example, UIConfig
 from api import demo_web_app
 
 # Construct GPT object and show some examples
-gpt = GPT(engine="davinci",
-          temperature=0.5,
+gpt = GPT(engine="curie-instruct-beta",
+          temperature=0.65,
+          top_p=1,
           max_tokens=100)
 
+##create an intro for your blog post
 
 gpt.add_example(Example("""Backpacking Essentials, backpacking, mountaineering, gear, safety, mountains, camping, ultralight """,
 """If you plan on going backpacking, mountaineering, or traveling in the mountains, it is essential to have backpacking essentials. 
