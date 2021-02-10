@@ -1,15 +1,23 @@
+##updated api path, engine, top p, updated temp 
+##Runs as expected 
+##Users can enter a sentence, key words, and even a person, book, or movie if they're looking for a quote
+##i.e.: nelson mandela quotes 
+
 import os
 import sys
-
-sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+API_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..')
+sys.path.append(API_PATH)
 
 from api import GPT, Example, UIConfig
 from api import demo_web_app
 
 # Construct GPT object and show some examples
-gpt = GPT(engine="davinci",
-          temperature=0.5,
+gpt = GPT(engine="curie-instruct-beta",
+          temperature=0.8,
+          top_p=1,
           max_tokens=100)
+
+##Create instagram captions 
 
 gpt.add_example(Example("""Mountains, adventure, backpacking, watching the sunrise, mount rainier""",
 """Glorious morning vista. The sun slowly peaks through the clouds, illuminating Mount Rainier’s snow-capped peaks. 
