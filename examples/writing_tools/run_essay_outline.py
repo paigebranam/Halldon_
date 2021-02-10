@@ -1,21 +1,25 @@
+##updated api path, engine, top p, updated top p, temp, and tokens. 
+##Runs as expected 
+
 import os
 import sys
-
-sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+API_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..')
+sys.path.append(API_PATH)
 
 from api import GPT, Example, UIConfig
 from api import demo_web_app
 
 # Construct GPT object and show some examples
-gpt = GPT(engine="davinci",
+gpt = GPT(engine="curie-instruct-beta",
           temperature=0.5,
+          top_p=.5,
           max_tokens=100)
 
 
 ##Create an essay outline
 
 
-gpt.add_example(Example("""The equakeof the 1998,The February 1998 Afghanistan earthquake occurred at 19:03 local time near the Afghanistan-Tajikistan border.""",
+gpt.add_example(Example("""The earth quake of the 1998,The February 1998 Afghanistan earthquake occurred at 19:03 local time near the Afghanistan-Tajikistan border.""",
 """Section: The earthquake was in a very remote area
 Section: Over 80 percent of the population affected by the earthquake lived in tents and other non-traditional housing 
 Takeaway: Don't neglect traditional disaster relief.
@@ -23,7 +27,7 @@ Section: Do not rely on a single agency for disaster relief.
 Section: Do not assume agencies will solve your problems.
 Takeaway: Be prepared to take care of yourself."""))
 
-gpt.add_example(Example("""The equakeof the 1998,The February 1998 Afghanistan earthquake occurred at 19:03 local time near the Afghanistan-Tajikistan border.""",
+gpt.add_example(Example("""The earth quake of the 1998,The February 1998 Afghanistan earthquake occurred at 19:03 local time near the Afghanistan-Tajikistan border.""",
 """Section: Because of the remoteness of the disaster area
 ∗∗∗ Section: Major international aid effort begins
 Section: Pakistani army sent to help refugees
