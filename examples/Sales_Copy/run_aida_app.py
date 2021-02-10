@@ -1,14 +1,17 @@
+##upated api path, engine, top_p 
+#works just fine 
 import os
 import sys
-
-sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+API_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..')
+sys.path.append(API_PATH)
 
 from api import GPT, Example, UIConfig
 from api import demo_web_app
 
 # Construct GPT object and show some examples
-gpt = GPT(engine="davinci",
+gpt = GPT(engine="curie-instruct-beta",
           temperature=0.5,
+          top_p=0.5,
           max_tokens=100)
 
 

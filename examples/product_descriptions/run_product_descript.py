@@ -1,14 +1,19 @@
+##updated api path, updated engine, added top_p, updated temp
+##runs as expected 
+
 import os
 import sys
+API_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..')
+sys.path.append(API_PATH)
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 from api import GPT, Example, UIConfig
 from api import demo_web_app
 
 # Construct GPT object and show some examples
-gpt = GPT(engine="davinci",
-          temperature=0.5,
+gpt = GPT(engine="curie-instruct-beta",
+          temperature=0.7,
+          top_p=0.5,
           max_tokens=100)
 
 ##This will generate product descriptions based on product name and short description
