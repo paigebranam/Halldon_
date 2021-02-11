@@ -1,16 +1,19 @@
+#updated api route, top p, engine
+#works as expected given a detailed input (such as the example)
+
 import os
 import sys
-sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+API_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..')
+sys.path.append(API_PATH)
 
 from api import GPT, Example, UIConfig
 from api import demo_web_app
 
-
 # Construct GPT object and show some examples
-gpt = GPT(engine="davinci",
-          temperature=0.8,
-          max_tokens=80)
-
+gpt = GPT(engine="curie-instruct-beta",
+          temperature=0.7,
+          top_p=1,
+          max_tokens=100)
 #This bot sends slightly informal compliments based on the company/position and info on the recipient.
 
 

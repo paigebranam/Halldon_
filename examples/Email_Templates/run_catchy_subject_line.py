@@ -1,4 +1,5 @@
 ##updated api path, engine, top p
+##Works best if given a proper description, otherwise it will just spit out same input.
 
 import os
 import sys
