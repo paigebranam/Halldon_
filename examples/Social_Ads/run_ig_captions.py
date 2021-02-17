@@ -9,7 +9,7 @@ API_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..')
 sys.path.append(API_PATH)
 
 from api import GPT, Example, UIConfig
-from api import demo_web_app
+
 
 # Construct GPT object and show some examples
 gpt = GPT(engine="curie-instruct-beta",
@@ -83,5 +83,4 @@ gpt.add_example(Example("""travel, wanderlust, adventure""",
 config = UIConfig(description="Write your next instagram caption",
                   button_text="Give me captions!",
                   placeholder="What do you want your post to be about?")
-
-demo_web_app(gpt, config)
+id = "ig-captions"

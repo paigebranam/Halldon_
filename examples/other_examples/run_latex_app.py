@@ -3,11 +3,11 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 from api import GPT, Example, UIConfig
-from api import demo_web_app
+
 
 
 # Construct GPT object and show some examples
-gpt = GPT(engine="davinci",
+gpt = GPT(engine="curie-instruct-beta",
           temperature=0.5,
           max_tokens=100)
 
@@ -31,4 +31,4 @@ config = UIConfig(description="Text to equation",
                   button_text="Translate",
                   placeholder="x squared plus 2 times x")
 
-demo_web_app(gpt, config)
+id = "latex-application"

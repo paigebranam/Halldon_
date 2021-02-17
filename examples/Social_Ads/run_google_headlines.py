@@ -6,7 +6,7 @@ API_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..')
 sys.path.append(API_PATH)
 
 from api import GPT, Example, UIConfig
-from api import demo_web_app
+
 
 # Construct GPT object and show some examples
 gpt = GPT(engine="curie-instruct-beta",
@@ -32,4 +32,4 @@ config = UIConfig(description="Create Google headlines for your social ads.",
                   button_text="Create",
                   placeholder="Enter a product (optional) and a description of the product.")
 
-demo_web_app(gpt, config)
+id = "google-headlines"

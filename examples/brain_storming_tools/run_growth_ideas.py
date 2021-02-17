@@ -7,8 +7,6 @@ API_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..')
 sys.path.append(API_PATH)
 
 from api import GPT, Example, UIConfig
-from api import demo_web_app
-
 
 # Construct GPT object and show some examples
 gpt = GPT(engine="curie-instruct-beta",
@@ -17,7 +15,6 @@ gpt = GPT(engine="curie-instruct-beta",
           max_tokens=40)
 
 #Create a growth ideas generator
-
 
 gpt.add_example(Example('leather camera strap',
 'New idea: promote prints with a group of people you\'re partnered with as a collaborative promotion'))
@@ -51,4 +48,4 @@ config = UIConfig(description="Generate new ideas for the growth of your product
                   button_text="Generate",
                   placeholder="Product (optional), description of product")
 
-demo_web_app(gpt, config)
+id = "growth-ideas"

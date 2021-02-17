@@ -4,11 +4,11 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 from api import GPT, Example, UIConfig
-from api import demo_web_app
+
 
 
 # Construct GPT object and show some examples
-gpt = GPT(engine="davinci", temperature=0.5, max_tokens=100)
+gpt = GPT(engine="curie-instruct-beta", temperature=0.5, max_tokens=100)
 
 gpt.add_example(Example("Who are you?", "I'm an example."))
 gpt.add_example(Example("What are you?", "I'm an example."))
@@ -21,4 +21,4 @@ config = UIConfig(
     show_example_form=True,
 )
 
-demo_web_app(gpt, config)
+id = "blank-example"

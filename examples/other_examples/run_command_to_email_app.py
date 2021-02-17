@@ -5,11 +5,11 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 from api import GPT, Example, UIConfig
-from api import demo_web_app
+
 
 
 # Construct GPT object and show some examples
-gpt = GPT(engine="davinci",
+gpt = GPT(engine="curie-instruct-beta",
           temperature=0.4,
           max_tokens=60)
 
@@ -30,4 +30,4 @@ config = UIConfig(description="Command to email generator",
                   button_text="Generate",
                   placeholder="Ask RAM Co. if they have new storage units in stock.")
 
-demo_web_app(gpt, config)
+id = "command-to-email"

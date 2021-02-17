@@ -13,7 +13,7 @@ answer_suffix = "\n\n"
 
 
 # Construct GPT object and show some examples
-gpt = GPT(engine="davinci",
+gpt = GPT(engine="curie-instruct-beta",
           temperature=0.5,
           max_tokens=100,
           input_prefix=question_prefix,
@@ -39,4 +39,4 @@ config = UIConfig(description="Question to Answer",
                   button_text="Answer",
                   placeholder="Who wrote the song 'Hey Jude'?")
 
-demo_web_app(gpt, config)
+id = "general-knowledge-app"

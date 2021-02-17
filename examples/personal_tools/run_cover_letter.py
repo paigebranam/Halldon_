@@ -5,7 +5,7 @@ API_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..')
 sys.path.append(API_PATH)
 
 from api import GPT, Example, UIConfig
-from api import demo_web_app
+
 
 # Construct GPT object and show some examples
 gpt = GPT(engine="curie-instruct-beta",
@@ -21,5 +21,4 @@ gpt.add_example(Example('Data Scientist, Experience mining data, optimizing clas
 config = UIConfig(description="Create a cover letter.",
                   button_text="Create",
                   placeholder="Tell me the role you're applying for and what experience makes you a good candidate.")
-
-demo_web_app(gpt, config)
+id = "cover-letter-creator"

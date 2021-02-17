@@ -3,7 +3,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 from api import GPT, Example, UIConfig
-from api import demo_web_app
+
 
 gpt = GPT(temperature=0.5, max_tokens=500)
 
@@ -32,4 +32,4 @@ config = UIConfig(description= "How to cook stuff",
                   button_text= "show me",
                   placeholder= "how to make a breakfast burrito")
 
-demo_web_app(gpt, config)
+id = "recipe-app"

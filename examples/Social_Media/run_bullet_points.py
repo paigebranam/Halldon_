@@ -7,7 +7,7 @@ API_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..')
 sys.path.append(API_PATH)
 
 from api import GPT, Example, UIConfig
-from api import demo_web_app
+
 
 # Construct GPT object and show some examples
 gpt = GPT(engine="curie-instruct-beta",
@@ -43,4 +43,4 @@ config = UIConfig(description="Create bullet points for your product description
                   button_text="Create",
                   placeholder="Please describe the product")
 
-demo_web_app(gpt, config)
+id = "bullet-point-ads"
